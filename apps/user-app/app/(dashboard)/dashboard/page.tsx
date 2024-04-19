@@ -10,9 +10,9 @@ export default async function () {
     <div className="m-2 p-2">
       <Card title="Profile">
         <div className="pt-2">
-          <div>id: {session?.user?.id}</div>
-          <div>name: {session?.user?.name || "NA"}</div>
-          <div> balance: {balance.amount / 100}</div>
+          <div>Id: {session?.user?.id}</div>
+          <div>Name: {session?.user?.name || "NA"}</div>
+          <div>Balance: {balance.amount / 100}</div>
         </div>
       </Card>
     </div>
