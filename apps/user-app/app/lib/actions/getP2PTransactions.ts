@@ -4,6 +4,7 @@ import prisma from "@repo/db/client";
 
 export async function getP2PTransactions() {
   const session = await getServerSession(authOptions);
+  if (!session?.user || !session?.user?.id) return [];
   const txns = await prisma.p2pTransfer.findMany({
     where: {
       OR: [

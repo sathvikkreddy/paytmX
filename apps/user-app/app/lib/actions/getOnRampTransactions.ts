@@ -6,6 +6,7 @@ import prisma from "@repo/db/client";
 
 export async function getOnRampTransactions() {
   const session = await getServerSession(authOptions);
+  if (!session?.user || !session?.user?.id) return [];
   const txns = await prisma.onRampTransaction.findMany({
     where: {
       userId: Number(session?.user?.id),

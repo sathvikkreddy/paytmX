@@ -21,7 +21,7 @@ export const P2PTransactions = ({
     <Card title="P2P Transactions">
       <div className="pt-2">
         {transactions.map((t) => (
-          <div className="flex justify-between">
+          <div className="flex justify-between" key={Math.random()}>
             <div>
               <div className="text-sm">
                 {`${t.sent ? "Sent" : "Received"}`} INR
